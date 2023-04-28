@@ -26,11 +26,6 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 0
 
 # Set up environment
 RUN conda env create -f maia_env.yml
-# RUN conda init
-# RUN source ~/.bashrc
-# RUN conda activate maia
-# RUN pip install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
-# RUN pip3 install -r requirements.txt
 RUN echo "source activate maia" > ~/.bashrc
 ENV PATH /opt/conda/envs/maia/bin:$PATH
 RUN pip install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
